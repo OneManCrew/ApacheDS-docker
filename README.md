@@ -2,7 +2,7 @@
 
 This Docker image provides an [ApacheDS](https://directory.apache.org/apacheds/) LDAP server. Optionally it could be used to provide a [Kerberos server](https://directory.apache.org/apacheds/advanced-ug/2.1-config-description.html#kerberos-server) as well.
 
-The project sources can be found on [GitHub](https://github.com/OneManCrew/ApacheDS-docker). The Docker image on [Docker Hub](https://registry.hub.docker.com/repository/docker/levidoro/apacheds).
+The project sources can be found on [GitHub](https://github.com/OneManCrew/ApacheDS-docker). The Docker image on [Docker Hub](https://registry.hub.docker.com/r/levidoro/apacheds).
 
 
 ## Build
