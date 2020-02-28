@@ -2,13 +2,13 @@
 
 This Docker image provides an [ApacheDS](https://directory.apache.org/apacheds/) LDAP server. Optionally it could be used to provide a [Kerberos server](https://directory.apache.org/apacheds/advanced-ug/2.1-config-description.html#kerberos-server) as well.
 
-The project sources can be found on [GitHub](https://github.com/openmicroscopy/apacheds-docker). The Docker image on [Docker Hub](https://registry.hub.docker.com/u/openmicroscopy/apacheds/).
+The project sources can be found on [GitHub](https://github.com/OneManCrew/ApacheDS-docker). The Docker image on [Docker Hub](https://registry.hub.docker.com/repository/docker/levidoro/apacheds).
 
 
 ## Build
 
-    git clone https://github.com/openmicroscopy/apacheds-docker.git
-    docker build -t openmicroscopy/apacheds apacheds-docker
+    git clone https://github.com/OneManCrew/ApacheDS-docker.git
+    docker build -t levidoro/apacheds Apacheds docker
 
 
 ## Installation
@@ -17,7 +17,7 @@ The folder */var/lib/apacheds* contains the runtime data and thus has been defin
 
 The container can be started issuing the following command:
 
-    docker run --name ldap -d -p 389:10389 openmicroscopy/apacheds
+    docker run --name ldap -d -p 389:10389 levidoro/apacheds
 
 
 ## Usage
@@ -33,9 +33,9 @@ Then you can import entries into that partition via your own *ldif* file:
 
 ## Customization
 
-It is also possible to start up your own defined Apache DS *instance* with your own configuration for *partitions* and *services*. Therefore you need to mount your [config.ldif](https://github.com/openmicroscopy/apacheds-docker/blob/master/instance/config.ldif) file and set the *APACHEDS_INSTANCE* environment variable properly. In the provided sample configuration the instance is named *default*. Assuming your custom instance is called *yourinstance* the following command will do the trick:
+It is also possible to start up your own defined Apache DS *instance* with your own configuration for *partitions* and *services*. Therefore you need to mount your [config.ldif](https://github.com/OneManCrew/ApacheDS-docker/tree/master/instance/config.ldif) file and set the *APACHEDS_INSTANCE* environment variable properly. In the provided sample configuration the instance is named *default*. Assuming your custom instance is called *yourinstance* the following command will do the trick:
 
-    docker run --name ldap -d -p 389:10389 -e APACHEDS_INSTANCE=yourinstance -v /path/to/your/config.ldif:/bootstrap/conf/config.ldif:ro openmicroscopy/apacheds
+    docker run --name ldap -d -p 389:10389 -e APACHEDS_INSTANCE=yourinstance -v /path/to/your/config.ldif:/bootstrap/conf/config.ldif:ro levidoro/apacheds
 
 
 It would be possible to use this ApacheDS image to provide a [Kerberos server](https://directory.apache.org/apacheds/advanced-ug/2.1-config-description.html#kerberos-server) as well. Just provide your own *config.ldif* file for that. Don't forget to expose the right port, then.
